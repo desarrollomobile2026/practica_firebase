@@ -1,30 +1,30 @@
-# Proyecto Base: Catalogo Mobile-First con Firebase
+# Proyecto Base: Catálogo Mobile-First con Firebase
 
-Este repositorio funciona como modelo de referencia para clases y trabajos practicos.
-El objetivo es que puedan tomar una base tecnica ya funcional y adaptarla a la identidad visual y funcional de su propio proyecto.
+Este repositorio funciona como modelo de referencia para clases y trabajos prácticos.
+El objetivo es que puedan tomar una base técnica ya funcional y adaptarla a la identidad visual y funcional de su propio proyecto.
 
-La aplicacion implementa un catalogo dinamico conectado a Firebase Firestore, con una experiencia centrada en dispositivos moviles.
+La aplicación implementa un catálogo dinámico conectado a Firebase Firestore, con una experiencia centrada en dispositivos móviles.
 
-## Objetivo pedagogico
+## Objetivo pedagógico
 
 Este proyecto permite practicar, en un caso real y simple, los siguientes contenidos:
 
 - Estructura de interfaz en HTML y CSS con enfoque mobile-first.
-- Logica de interaccion en JavaScript vanilla.
-- Integracion con base de datos NoSQL en tiempo real (Firestore).
+- Lógica de interacción en JavaScript vanilla.
+- Integración con base de datos NoSQL en tiempo real (Firestore).
 - Persistencia local de estado de compra con LocalStorage.
-- Adaptacion de una base tecnica a un diseno de producto definido en Figma.
+- Adaptación de una base técnica a un diseño de producto definido en Figma.
 
 ## Funcionalidades implementadas
 
-- Visualizacion de productos por categorias.
-- Busqueda por nombre en tiempo real.
+- Visualización de productos por categorías.
+- Búsqueda por nombre en tiempo real.
 - Sistema de likes para destacar contenido.
-- Seccion de destacados ordenada por interaccion.
+- Sección de destacados ordenada por interacción.
 - Carrito con almacenamiento local.
 - Alta y baja de elementos en Firestore.
 
-## Stack tecnologico
+## Stack tecnológico
 
 - HTML5
 - CSS3
@@ -37,11 +37,11 @@ Este proyecto permite practicar, en un caso real y simple, los siguientes conten
 - Proyecto de Firebase creado.
 - Firestore Database habilitado.
 
-## Configuracion inicial
+## Configuración inicial
 
 1. Crear o usar un proyecto en Firebase.
 2. Habilitar Firestore Database.
-3. Completar los datos de configuracion en config.js con el objeto firebaseConfig.
+3. Completar los datos de configuración en config.js con el objeto firebaseConfig.
 4. Verificar que index.html cargue los scripts de Firebase compat:
   - https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js
   - https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js
@@ -50,16 +50,16 @@ Este proyecto permite practicar, en un caso real y simple, los siguientes conten
 
 ```text
 .
-|- index.html   # Vistas, navegacion y modales
+|- index.html   # Vistas, navegación y modales
 |- style.css    # Estilos de interfaz mobile-first
-|- app.js       # Logica de UI, carrito y operaciones Firestore
-|- config.js    # Configuracion local de Firebase
+|- app.js       # Lógica de UI, carrito y operaciones Firestore
+|- config.js    # Configuración local de Firebase
 |- README.md
 ```
 
 ## Modelo de datos sugerido
 
-Coleccion principal: productos
+Colección principal: productos
 
 Ejemplo de documento:
 
@@ -74,41 +74,31 @@ Ejemplo de documento:
 }
 ```
 
-## Consigna de adaptacion (Figma + implementacion)
+## Consigna de adaptación (Figma + implementación)
 
-Usen este repositorio como plantilla tecnica para su proyecto final.
+Usen este repositorio como plantilla base para su proyecto final.
 
 Cada equipo debe:
 
-1. Mantener la logica base de carga de datos, interaccion y persistencia.
-2. Adaptar la interfaz (estructura, colores, tipografia, componentes y navegacion) al diseno ya aprobado en Figma.
-3. Ajustar textos, etiquetas y categorias segun su caso de uso.
-4. Definir si su proyecto representa productos o servicios:
-  - Si es de productos, conservar el flujo de catalogo y carrito.
-  - Si es de servicios, adaptar el carrito a reserva, solicitud o contratacion.
-5. Presentar coherencia entre:
-  - Prototipo en Figma.
-  - Implementacion visual en codigo.
-  - Modelo de datos en Firestore.
+1. Tomar este modelo y acercarlo al diseño que ya tienen definido en Figma.
+2. Adaptar los productos de ejemplo a sus propios productos.
+3. Si su proyecto es de servicios, reemplazar los productos por sus servicios.
+4. Ajustar textos, imágenes, categorías y nombres según su propuesta.
+5. Mantener coherencia visual entre lo diseñado en Figma y lo implementado en la app.
 
-## Uso rapido
+Nota: esta actividad se enfoca en la adaptación del diseño y del contenido del proyecto, no en una complejidad técnica adicional.
+
+## Uso rápido
 
 1. Abrir index.html en el navegador.
 2. Navegar por inicio, productos, favoritos y carrito.
-3. Crear, visualizar y eliminar items para validar el flujo completo.
+3. Crear, visualizar y eliminar ítems para validar el flujo completo.
 4. Verificar que los cambios de Firestore se reflejen en tiempo real.
 
-## Criterios recomendados de evaluacion
+## Criterios recomendados de evaluación
 
-- Coherencia entre diseno (Figma) y desarrollo.
-- Correcta integracion con Firebase.
+- Coherencia entre diseño (Figma) y desarrollo.
+- Funcionamiento general del prototipo en la app.
 - Calidad de experiencia de usuario en mobile.
-- Claridad de estructura y mantenibilidad del codigo.
-- Adaptacion correcta al dominio elegido (productos o servicios).
-
-## Mejoras sugeridas
-
-- Agregar autenticacion para restringir operaciones administrativas.
-- Implementar validaciones de formularios mas completas.
-- Configurar reglas de seguridad de Firestore por roles.
-- Publicar el proyecto en Firebase Hosting.
+- Claridad de estructura y mantenibilidad del código.
+- Adaptación correcta al dominio elegido (productos o servicios).
