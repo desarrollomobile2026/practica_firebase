@@ -1,34 +1,84 @@
-# 🛒 E-Commerce MVP Mobile-First (Simulador de Catálogo Reactivo)
+# Tienda Mobile-First con Firebase
 
-Este proyecto representa un **Mínimo Producto Viable (MVP)** enfocado en la simulación de una experiencia de compra unificada para entornos móviles. Ha sido estructurado bajo estándares académicos con un perfil técnico-estratégico de Comercio Electrónico, demostrando la viabilidad técnica de una plataforma y el análisis del embudo de conversión (conversion funnel).
+Aplicacion web de ejemplo orientada a mobile-first para gestionar un catalogo de productos con Firebase Firestore en tiempo real.
 
----
+Permite:
+- Ver productos por categoria.
+- Buscar productos por nombre.
+- Dar likes a productos.
+- Ver destacados segun likes.
+- Agregar y eliminar productos del carrito (persistido en LocalStorage).
+- Crear y eliminar productos en Firestore.
 
-## 📊 Propuesta de Negocio y Enfoque E-Commerce
+## Stack
 
-El desarrollo mitiga fricciones habituales en canales web convencionales mediante la implementación de las siguientes estrategias digitales:
-* **Mobile-First Design:** Interfaz adaptada rigurosamente a estructuras de smartphones (max-width: 450px) emulando una Web App nativa.
-* **Real-Time Cataloging:** Integración directa con base de datos NoSQL que actualiza los precios y productos sin recargar la página, evitando quiebres de stock lógicos.
-* **Social Commerce Toolkit:** Sistema de interacciones cualitativas ("Likes") para identificar tendencias internas y automatizar la sección de "Lo más buscado" basándose en algoritmos de preferencia del consumidor.
-* **Persistencia Local (Zero Friction):** Uso de `LocalStorage` para el recupero del carrito abandonado, incrementando la métrica de conversión y retención del carrito.
+- HTML5
+- CSS3
+- JavaScript vanilla
+- Firebase Firestore (SDK compat)
 
----
+## Requisitos
 
-## 🛠️ Arquitectura Tecnológica
+- Navegador moderno (Chrome, Edge, Firefox).
+- Proyecto creado en Firebase.
+- Firestore habilitado.
 
-El ecosistema de la aplicación se diseñó de forma limpia y escalable utilizando tecnologías nativas para optimizar el rendimiento de carga (LCP - Largest Contentful Paint):
+## Configuracion
 
-* **Frontend Estructural:** HTML5 Semántico y CSS3 con layouts basados en CSS Grid y Flexbox.
-* **Lógica de Negocio:** JavaScript (Vanilla JS) enfocado en la manipulación eficiente del DOM de manera asíncrona.
-* **Capa del Servidor (BaaS):** Google Firebase Firestore (SDK v10 Compat) actuando como base de datos documental en tiempo real.
+1. Crear/usar un proyecto en Firebase.
+2. Habilitar Firestore Database.
+3. Completar los datos de configuracion en `config.js` con tu objeto `firebaseConfig`.
+4. Verificar que `index.html` cargue estos scripts:
+	- `https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js`
+	- `https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js`
 
----
-
-## 🗂️ Estructura del Proyecto
+## Estructura
 
 ```text
-├── index.html          # Interfaz de usuario estructurada en secciones independientes (SPA)
-├── style.css           # Capa de diseño estilizada para simulación de dispositivo móvil
-├── app.js              # Controlador principal de lógica de negocio y consumo de servicios
-├── config.js           # Archivo de credenciales del entorno local (Excluido en .gitignore)
-└── README.md           # Documentación ejecutiva del proyecto
+.
+|- index.html   # Estructura de vistas, modales y navegacion
+|- style.css    # Estilos mobile-first
+|- app.js       # Logica de UI, carrito y operaciones con Firestore
+|- config.js    # Configuracion Firebase local
+|- README.md
+```
+
+## Modelo de datos (coleccion `productos`)
+
+Cada documento de Firestore usa esta forma:
+
+```js
+{
+  nombre: string,
+  precio: number,
+  categoria: string,      // ej: "calzado", "ropa", "gorras"
+  foto_url: string,
+  descripcion: string,
+  likes: number
+}
+```
+
+## Como usar
+
+1. Abrir `index.html` en el navegador.
+2. Navegar por Inicio, Productos, Favoritos y Carrito.
+3. En Productos:
+	- Tocar una card para abrir detalle.
+	- Dar like desde el modal.
+	- Agregar al carrito.
+4. Usar el boton `+` para crear un producto nuevo en Firestore.
+5. Usar el icono de papelera en una card para eliminar un producto en Firestore.
+6. Finalizar compra desde el carrito (limpia el carrito local).
+
+## Notas
+
+- El carrito se guarda en LocalStorage con la clave `carrito`.
+- Los listados de productos y destacados se actualizan en tiempo real con listeners `onSnapshot`.
+- Si no hay productos en una seccion, se muestra un mensaje de estado vacio.
+
+## Mejoras sugeridas
+
+- Agregar autenticacion para restringir altas/bajas de productos.
+- Implementar validaciones de formulario mas robustas.
+- Configurar reglas de seguridad de Firestore segun roles.
+- Publicar en Firebase Hosting.
