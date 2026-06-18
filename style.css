@@ -414,3 +414,34 @@ body {
 .btn-borrar-db:active {
     transform: scale(0.9);
 }
+
+/* Correcciones estéticas de UI limpia */
+.sin-datos, .destacados-vacios {
+    padding: 15px; 
+    color: #777; 
+    font-size: 0.9rem; 
+    text-align: center;
+    grid-column: span 2;
+}
+.card-info-header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+.badge-likes {
+    font-size: 0.8rem; 
+    font-weight: bold; 
+    color: #e91e63;
+}
+.carrito-vacio-msg {
+    text-align: center; 
+    padding: 20px; 
+    color: #666;
+}
+.item-carrito-desc {
+    flex-grow: 1; 
+    margin-left: 10px;
+}
+.item-carrito-desc h4 { margin:0; font-size: 0.9rem; }
+.item-carrito-desc p { margin:0; font-size: 0.8rem; color: #1a73e8; font-weight: bold; }
+.btn-eliminar-item { background: none; border: none; cursor: pointer; font-size: 1.1rem; }
